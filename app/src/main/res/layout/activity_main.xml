@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/karavanTakip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Karavan Takip"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/rectangle_button"
+        android:text="Bluetooth Bağlantısı"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/karavanTakip"
+        app:layout_constraintStart_toStartOf="@+id/karavanTakip"
+        app:layout_constraintTop_toBottomOf="@+id/karavanTakip" />
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:columnCount="2"
+        android:rowCount="2"
+        android:layout_margin="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintVertical_bias="0.0">
+        <!-- tek bir sutun yapısı, bunları grip layouta koyacagim -->
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:gravity="center_vertical"
+
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_gravity="fill"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="36dp"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/fuel_title"
+                android:textSize="@dimen/feature_title_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Yakıt Takip"
+                android:textAppearance="?attr/textAppearanceListItem" />
+
+            <ImageView
+                android:layout_margin="@dimen/icon_margin_size"
+                android:id="@+id/fuel_icon"
+                android:layout_width="@dimen/icon_width"
+                android:layout_height="@dimen/icon_width"
+                android:layout_gravity="center"
+                android:src="@drawable/fuel_tank" />
+
+            <TextView
+                android:layout_marginLeft="@dimen/text_marginLeft"
+                android:layout_marginRight="@dimen/text_marginRight"
+
+                android:id="@+id/fuel_explanation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Depo Doluluk Oranı:"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:textSize="@dimen/feature_explanation_size"/>
+
+            <TextView
+                android:id="@+id/fuel_percentage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="%80"
+                android:textSize="@dimen/feature_ratio_size"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <!-- tek bir sutun yapısı, bunları grip layouta koyacagim -->
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:gravity="center_vertical"
+
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_gravity="fill"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="36dp"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/water_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="@dimen/feature_title_size"
+                android:text="Su Deposu"
+                android:textAppearance="?attr/textAppearanceListItem" />
+
+            <ImageView
+                android:layout_margin="@dimen/icon_margin_size"
+                android:id="@+id/water_icon"
+                android:layout_width="@dimen/icon_width"
+                android:layout_height="@dimen/icon_width"
+                android:layout_gravity="center"
+                android:src="@drawable/tank_cistern" />
+
+            <TextView
+                android:layout_marginLeft="@dimen/text_marginLeft"
+                android:layout_marginRight="@dimen/text_marginRight"
+                android:id="@+id/water_explanation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Depo Doluluk Oranı:"
+                android:textSize="@dimen/feature_explanation_size"
+                android:textAppearance="?attr/textAppearanceListItem" />
+
+            <TextView
+                android:id="@+id/water_percentage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="%80"
+                android:textSize="@dimen/feature_ratio_size"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_gravity="fill"
+
+            android:layout_row="1"
+            android:layout_column="0"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="36dp"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/voltage_title"
+                android:textSize="@dimen/feature_title_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Voltaj"
+                android:textAppearance="?attr/textAppearanceListItem" />
+
+            <ImageView
+                android:layout_margin="@dimen/icon_margin_size"
+                android:id="@+id/voltage__icon"
+                android:layout_width="@dimen/icon_width"
+                android:layout_height="@dimen/icon_width"
+                android:layout_gravity="center"
+                android:src="@drawable/solar_panel" />
+
+            <TextView
+                android:layout_marginLeft="@dimen/text_marginLeft"
+                android:layout_marginRight="@dimen/text_marginRight"
+                android:id="@+id/voltage__explanation"
+                android:textSize="@dimen/feature_explanation_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Voltaj:"
+                android:textAppearance="?attr/textAppearanceListItem" />
+
+            <TextView
+                android:id="@+id/voltage__percentage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="32 V"
+                android:textSize="@dimen/feature_ratio_size"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout4"
+
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:layout_gravity="fill"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="36dp"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/current_title"
+                android:textSize="@dimen/feature_title_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Akım"
+                android:textAppearance="?attr/textAppearanceListItem" />
+
+            <ImageView
+                android:layout_margin="@dimen/icon_margin_size"
+                android:id="@+id/current_icon"
+                android:layout_width="@dimen/icon_width"
+                android:layout_height="@dimen/icon_width"
+                android:layout_gravity="center"
+                android:src="@drawable/electric_tower" />
+
+            <TextView
+                android:layout_marginLeft="@dimen/text_marginLeft"
+                android:layout_marginRight="@dimen/text_marginRight"
+                android:id="@+id/current_explanation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="@dimen/feature_explanation_size"
+                android:text="Akım:"
+                android:textAppearance="?attr/textAppearanceListItem" />
+
+            <TextView
+                android:id="@+id/current_percentage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="12 A"
+                android:textSize="@dimen/feature_ratio_size"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+        >
+    </GridLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
